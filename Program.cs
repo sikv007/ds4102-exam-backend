@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using FullStackApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,8 @@ builder.Services.AddCors(options => {
     policies.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
     );
 });
+
+builder.Services.AddDbContext<FullStackApiContext>(options => options.UseSqlite("Data Source = FullStackDatabase.db"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
