@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullStackApi.Migrations
 {
     [DbContext(typeof(FullStackApiContext))]
-    [Migration("20220407154906_initialcreate2")]
-    partial class initialcreate2
+    [Migration("20220407211143_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace FullStackApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("BirthYear")
+                    b.Property<int>("DateOfBirth")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
@@ -37,7 +37,6 @@ namespace FullStackApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Phone")
-                        .HasMaxLength(8)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Skills")

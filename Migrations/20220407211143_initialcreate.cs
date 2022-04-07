@@ -16,9 +16,8 @@ namespace FullStackApi.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: true),
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    Phone = table.Column<int>(type: "INTEGER", maxLength: 8, nullable: false),
-                    BirthYear = table.Column<int>(type: "INTEGER", nullable: false),
+                    Phone = table.Column<int>(type: "INTEGER", nullable: false),
+                    DateOfBirth = table.Column<int>(type: "INTEGER", nullable: false),
                     JobTitle = table.Column<string>(type: "TEXT", nullable: true),
                     Skills = table.Column<string>(type: "TEXT", nullable: true)
                 },

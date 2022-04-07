@@ -53,3 +53,4 @@
 /Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/obj/Debug/net6.0/ref/FullStackApi.dll
 /Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/obj/Debug/net6.0/FullStackApi.pdb
 /Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/obj/Debug/net6.0/FullStackApi.genruntimeconfig.cache
+/Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/bin/Debug/net6.0/Newtonsoft.Json.dll

@@ -22,7 +22,7 @@ namespace FullStackApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("BirthYear")
+                    b.Property<int>("DateOfBirth")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
@@ -35,7 +35,6 @@ namespace FullStackApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Phone")
-                        .HasMaxLength(8)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Skills")
