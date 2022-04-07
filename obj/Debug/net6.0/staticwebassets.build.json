@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cM0TwxSAwteUUgCbOziY1cFl+GV4UP4O7TXUPGMWf5I=",
+  "Hash": "yE+NXoepKeVh5sFQW1Xfgb8wUKOra9Nsd+0/sgVqRYM=",
   "Source": "FullStackApi",
   "BasePath": "_content/FullStackApi",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "/Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/wwwroot/index.html",
+      "SourceId": "FullStackApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sigurdkvamme/Documents/GitHub/eksamen-web/fullstack/FullStackApi/wwwroot/",
+      "BasePath": "_content/FullStackApi",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
 }

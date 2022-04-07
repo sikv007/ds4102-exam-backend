@@ -17,7 +17,7 @@ namespace FullStackApi.Migrations
                     FirstName = table.Column<string>(type: "TEXT", nullable: true),
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
                     Phone = table.Column<int>(type: "INTEGER", nullable: false),
-                    DateOfBirth = table.Column<int>(type: "INTEGER", nullable: false),
+                    DateOfBirth = table.Column<string>(type: "TEXT", nullable: true),
                     JobTitle = table.Column<string>(type: "TEXT", nullable: true),
                     Skills = table.Column<string>(type: "TEXT", nullable: true)
                 },

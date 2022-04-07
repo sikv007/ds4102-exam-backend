@@ -22,8 +22,8 @@ namespace FullStackApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DateOfBirth")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("DateOfBirth")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");

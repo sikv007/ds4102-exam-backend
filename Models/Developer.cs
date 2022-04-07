@@ -13,7 +13,9 @@ public class Developer
 
   public int Phone {get; set;}
 
-  public int DateOfBirth { get; set; }
+  public string? Email => FirstName?.ToLower() + "@fullstack.no";
+
+  public string? DateOfBirth { get; set; }
 
   public string? JobTitle { get; set; }
 
