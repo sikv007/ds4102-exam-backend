@@ -11,7 +11,9 @@ public class Developer
 
   public string? LastName { get; set; }
 
-  public string? Email {get; set;}
+  public string? FullName => FirstName + " " + LastName;
+
+  public string? Email => FirstName?.ToLower() + "@fullstack.no";
 
   [MaxLength(8)]
   public int Phone {get; set;}
