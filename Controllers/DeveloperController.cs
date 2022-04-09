@@ -12,10 +12,12 @@ public class DeveloperController : ControllerBase
 {
 
   private readonly FullStackApiContext _context;
+  private readonly IWebHostEnvironment _hosting;
 
-  public DeveloperController(FullStackApiContext context)
+  public DeveloperController(FullStackApiContext context, IWebHostEnvironment hosting)
   {
     _context = context;
+    _hosting = hosting;
   }
 
   [HttpGet]
@@ -25,8 +27,6 @@ public class DeveloperController : ControllerBase
     if (developers == null) return BadRequest();
     return Ok(developers);
   }
-
-
 
   [HttpGet("{id}")]
   public async Task<IActionResult> Get(int id)
@@ -45,6 +45,20 @@ public class DeveloperController : ControllerBase
     Developer developer = await _context.Developers.FindAsync(newDeveloper.Id);
 
     return Ok(developer);
+  }
+
+  [HttpPost]
+  [Route("[action]")]
+  public IActionResult PostImage(IFormFile file)
+  {
+      string webRootPath = _hosting.WebRootPath;
+      string absolutePath = Path.Combine($"{webRootPath}/src/img/developers/{file.FileName}");
+
+      using (var fileStream = new FileStream(absolutePath, FileMode.Create))
+      {
+          file.CopyTo(fileStream);
+      }
+      return Ok();
   }
 
   [HttpDelete("{id}")]

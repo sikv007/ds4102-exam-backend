@@ -18,8 +18,10 @@ namespace FullStackApi.Migrations
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
                     Phone = table.Column<int>(type: "INTEGER", nullable: false),
                     DateOfBirth = table.Column<string>(type: "TEXT", nullable: true),
+                    Image = table.Column<string>(type: "TEXT", nullable: true),
                     JobTitle = table.Column<string>(type: "TEXT", nullable: true),
-                    Skills = table.Column<string>(type: "TEXT", nullable: true)
+                    Skills = table.Column<string>(type: "TEXT", nullable: true),
+                    Assignment = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
