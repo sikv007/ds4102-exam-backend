@@ -8,13 +8,13 @@ namespace FullStackApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class DeveloperController : ControllerBase
+public class CompanyController : ControllerBase
 {
 
   private readonly FullStackApiContext _context;
   private readonly IWebHostEnvironment _hosting;
 
-  public DeveloperController(FullStackApiContext context, IWebHostEnvironment hosting)
+  public CompanyController(FullStackApiContext context, IWebHostEnvironment hosting)
   {
     _context = context;
     _hosting = hosting;
@@ -23,28 +23,28 @@ public class DeveloperController : ControllerBase
   [HttpGet]
   public async Task<IActionResult> Get()
   {
-    List<Developer> developers = await _context.Developers.ToListAsync();
-    if (developers == null) return BadRequest();
-    return Ok(developers);
+    List<Company> companies = await _context.Companies.ToListAsync();
+    if (companies == null) return BadRequest();
+    return Ok(companies);
   }
 
   [HttpGet("{id}")]
   public async Task<IActionResult> Get(int id)
   {
-    Developer developer = await _context.Developers.FindAsync(id);
-    if (developer == null) return BadRequest();
+    Company company = await _context.Companies.FindAsync(id);
+    if (company == null) return BadRequest();
     return Ok();
   }
 
   [HttpPost]
-  public async Task<IActionResult> Post(Developer newDeveloper)
+  public async Task<IActionResult> Post(Company newCompany)
   {
-    _context.Developers.Add(newDeveloper);
+    _context.Companies.Add(newCompany);
     await _context.SaveChangesAsync();
 
-    Developer developer = await _context.Developers.FindAsync(newDeveloper.Id);
+    Company company = await _context.Companies.FindAsync(newCompany.Id);
 
-    return Ok(developer);
+    return Ok(company);
   }
 
   [HttpPost]
@@ -64,16 +64,16 @@ public class DeveloperController : ControllerBase
   [HttpDelete("{id}")]
   public async Task<IActionResult> Delete(int id)
   {
-    Developer developer = await _context.Developers.FindAsync(id);
-    _context.Developers.Remove(developer);
+    Company company = await _context.Companies.FindAsync(id);
+    _context.Companies.Remove(company);
     await _context.SaveChangesAsync();
     return NoContent();
   }
 
   [HttpPut]
-  public async Task<IActionResult> Put(Developer editedDeveloper)
+  public async Task<IActionResult> Put(Company editedCompany)
   {
-    _context.Entry(editedDeveloper).State = EntityState.Modified;
+    _context.Entry(editedCompany).State = EntityState.Modified;
     await _context.SaveChangesAsync();
     return NoContent();
   }
