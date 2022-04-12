@@ -11,4 +11,6 @@ public class FullStackApiContext : DbContext
   public DbSet<FullStackApi.Models.Developer> Developers { get; set; }
   public DbSet<FullStackApi.Models.Company> Companies { get; set; }
 
+  public DbSet<FullStackApi.Models.Assignment> Assignments { get; set; }
+
 }

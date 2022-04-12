@@ -33,7 +33,7 @@ public class CompanyController : ControllerBase
   {
     Company company = await _context.Companies.FindAsync(id);
     if (company == null) return BadRequest();
-    return Ok();
+    return Ok(company);
   }
 
   [HttpPost]
@@ -52,7 +52,7 @@ public class CompanyController : ControllerBase
   public IActionResult PostImage(IFormFile file)
   {
     string webRootPath = _hosting.WebRootPath;
-    string absolutePath = Path.Combine($"{webRootPath}/src/img/developers/{file.FileName}");
+    string absolutePath = Path.Combine($"{webRootPath}/src/img/company/{file.FileName}");
 
     using (var fileStream = new FileStream(absolutePath, FileMode.Create))
     {

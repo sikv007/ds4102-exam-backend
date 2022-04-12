@@ -33,7 +33,7 @@ public class DeveloperController : ControllerBase
   {
     Developer developer = await _context.Developers.FindAsync(id);
     if (developer == null) return BadRequest();
-    return Ok();
+    return Ok(developer);
   }
 
   [HttpPost]
@@ -52,7 +52,7 @@ public class DeveloperController : ControllerBase
   public IActionResult PostImage(IFormFile file)
   {
     string webRootPath = _hosting.WebRootPath;
-    string absolutePath = Path.Combine($"{webRootPath}/src/img/developers/{file.FileName}");
+    string absolutePath = Path.Combine($"{webRootPath}/src/img/developer/{file.FileName}");
 
     using (var fileStream = new FileStream(absolutePath, FileMode.Create))
     {
