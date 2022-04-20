@@ -41,9 +41,8 @@ public class DeveloperController : ControllerBase
   {
     _context.Developers.Add(newDeveloper);
     await _context.SaveChangesAsync();
-
     Developer developer = await _context.Developers.FindAsync(newDeveloper.Id);
-
+    if (developer == null) return BadRequest();
     return Ok(developer);
   }
 
@@ -65,6 +64,7 @@ public class DeveloperController : ControllerBase
   public async Task<IActionResult> Delete(int id)
   {
     Developer developer = await _context.Developers.FindAsync(id);
+    if (developer == null) return BadRequest();
     _context.Developers.Remove(developer);
     await _context.SaveChangesAsync();
     return NoContent();

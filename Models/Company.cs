@@ -11,7 +11,7 @@ public class Company
 
   public string? Address { get; set; }
 
-  public string? Assigments { get; set; }
+  public string? Assignments { get; set; }
 
   public int OrganizationNumber {get; set;}
   

@@ -23,6 +23,6 @@ public class Developer
 
   public string? Skills { get; set; }
 
-  public string? Assignment { get; set; }
+  public int? Assignment { get; set; }
 
 }
