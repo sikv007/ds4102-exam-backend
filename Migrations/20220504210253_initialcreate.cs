@@ -17,10 +17,7 @@ namespace FullStackApi.Migrations
                     Title = table.Column<string>(type: "TEXT", nullable: true),
                     Company = table.Column<string>(type: "TEXT", nullable: true),
                     Price = table.Column<int>(type: "INTEGER", nullable: false),
-                    Team = table.Column<string>(type: "TEXT", nullable: true),
-                    StartDate = table.Column<string>(type: "TEXT", nullable: true),
-                    EndDate = table.Column<string>(type: "TEXT", nullable: true),
-                    Completed = table.Column<bool>(type: "INTEGER", nullable: false)
+                    Team = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,12 +69,10 @@ namespace FullStackApi.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true),
                     Company = table.Column<string>(type: "TEXT", nullable: true),
                     Product = table.Column<string>(type: "TEXT", nullable: true),
-                    DaysDue = table.Column<int>(type: "INTEGER", nullable: false),
-                    Total = table.Column<int>(type: "INTEGER", nullable: false),
-                    Sent = table.Column<bool>(type: "INTEGER", nullable: false)
+                    DateDue = table.Column<string>(type: "TEXT", nullable: true),
+                    Total = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

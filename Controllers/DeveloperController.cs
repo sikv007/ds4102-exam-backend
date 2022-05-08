@@ -50,6 +50,7 @@ public class DeveloperController : ControllerBase
   [Route("[action]")]
   public IActionResult PostImage(IFormFile file)
   {
+    if (file == null) return BadRequest();
     string webRootPath = _hosting.WebRootPath;
     string absolutePath = Path.Combine($"{webRootPath}/src/img/developer/{file.FileName}");
 
@@ -73,6 +74,7 @@ public class DeveloperController : ControllerBase
   [HttpPut]
   public async Task<IActionResult> Put(Developer editedDeveloper)
   {
+    if (editedDeveloper == null) return BadRequest();
     _context.Entry(editedDeveloper).State = EntityState.Modified;
     await _context.SaveChangesAsync();
     return NoContent();

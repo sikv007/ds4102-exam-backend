@@ -1,0 +1,31 @@
+.method {
+  background-color: #222;
+  border-radius: 16px;
+  font-family: monospace;
+}
+
+.method__name {
+  border-radius: 4px;
+  width: 90px;
+}
+
+.method__name--get {
+  background-color: #61affe;
+}
+.method__name--post {
+  background-color: #49cc90;
+}
+.method__name--put {
+  background-color: #fca130
+}
+.method__name--delete {
+  background-color: #f93e3e
+}
+
+.method__url {
+  color: #FFF;
+}
+
+.hidden {
+  display: none;
+}

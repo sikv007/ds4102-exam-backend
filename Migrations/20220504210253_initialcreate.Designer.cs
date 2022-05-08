@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullStackApi.Migrations
 {
     [DbContext(typeof(FullStackApiContext))]
-    [Migration("20220420111326_initialcreate")]
+    [Migration("20220504210253_initialcreate")]
     partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,17 +28,8 @@ namespace FullStackApi.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Completed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("EndDate")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Price")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("StartDate")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Team")
                         .HasColumnType("TEXT");
@@ -127,16 +118,10 @@ namespace FullStackApi.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DaysDue")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Product")
+                    b.Property<string>("DateDue")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Sent")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
+                    b.Property<string>("Product")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Total")

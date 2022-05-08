@@ -7,16 +7,14 @@ public class Invoice
   [Key]
   public int Id { get; set; }
 
-  public string? Title { get; set; }
+  public string? Title => $"Faktura #{Id.ToString().PadLeft(3, '0')}";
 
   public string? Company { get; set; }
 
   public string? Product { get; set; }
 
-  public int DaysDue { get; set; }
+  public string? DateDue { get; set; }
 
   public int Total { get; set; }
-
-  public Boolean Sent { get; set; }
 
 }

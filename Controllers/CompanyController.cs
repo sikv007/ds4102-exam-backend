@@ -10,7 +10,6 @@ namespace FullStackApi.Controllers;
 [Route("api/[controller]")]
 public class CompanyController : ControllerBase
 {
-
   private readonly FullStackApiContext _context;
   private readonly IWebHostEnvironment _hosting;
 
@@ -39,6 +38,7 @@ public class CompanyController : ControllerBase
   [HttpPost]
   public async Task<IActionResult> Post(Company newCompany)
   {
+    if (newCompany == null) return BadRequest();
     _context.Companies.Add(newCompany);
     await _context.SaveChangesAsync();
 
@@ -51,6 +51,7 @@ public class CompanyController : ControllerBase
   [Route("[action]")]
   public IActionResult PostImage(IFormFile file)
   {
+    if (file == null) return BadRequest();
     string webRootPath = _hosting.WebRootPath;
     string absolutePath = Path.Combine($"{webRootPath}/src/img/company/{file.FileName}");
 
@@ -65,6 +66,7 @@ public class CompanyController : ControllerBase
   public async Task<IActionResult> Delete(int id)
   {
     Company company = await _context.Companies.FindAsync(id);
+    if (company == null) return BadRequest();
     _context.Companies.Remove(company);
     await _context.SaveChangesAsync();
     return NoContent();

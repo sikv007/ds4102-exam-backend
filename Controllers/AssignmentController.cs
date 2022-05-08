@@ -13,7 +13,7 @@ public class AssignmentController : ControllerBase
 
   private readonly FullStackApiContext _context;
 
-  public AssignmentController(FullStackApiContext context )
+  public AssignmentController(FullStackApiContext context)
   {
     _context = context;
   }
@@ -37,11 +37,10 @@ public class AssignmentController : ControllerBase
   [HttpPost]
   public async Task<IActionResult> Post(Assignment newAssignment)
   {
+    if (newAssignment == null) return BadRequest();
     _context.Assignments.Add(newAssignment);
     await _context.SaveChangesAsync();
-
     Assignment assignment = await _context.Assignments.FindAsync(newAssignment.Id);
-
     return Ok(assignment);
   }
 
@@ -49,6 +48,7 @@ public class AssignmentController : ControllerBase
   public async Task<IActionResult> Delete(int id)
   {
     Assignment assignment = await _context.Assignments.FindAsync(id);
+    if (assignment == null) return BadRequest();
     _context.Assignments.Remove(assignment);
     await _context.SaveChangesAsync();
     return NoContent();
@@ -57,6 +57,7 @@ public class AssignmentController : ControllerBase
   [HttpPut]
   public async Task<IActionResult> Put(Assignment editedAssignment)
   {
+    if(editedAssignment == null) return BadRequest();
     _context.Entry(editedAssignment).State = EntityState.Modified;
     await _context.SaveChangesAsync();
     return NoContent();

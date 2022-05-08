@@ -15,10 +15,4 @@ public class Assignment
 
   public string? Team { get; set; }
 
-  public string? StartDate { get; set; }
-
-  public string? EndDate { get; set; }
-
-  public Boolean Completed { get; set; }
-
 }
